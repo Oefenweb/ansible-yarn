@@ -1,0 +1,18 @@
+# tasks file for yarn
+---
+- name: add public key
+  apt_key:
+    id: 1646B01B86E50310
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+  tags:
+    - yarn-repository-public-key
+
+- name: add yarn repository
+  apt_repository:
+    repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
+    state: present
+    update_cache: true
+  with_items: "{{ yarn_repositories }}"
+  tags:
+    - yarn-repository-add

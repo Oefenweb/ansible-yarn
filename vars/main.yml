@@ -1,0 +1,9 @@
+# vars file for yarn
+---
+yarn_repositories:
+  - type: deb
+    url: 'https://dl.yarnpkg.com/debian/ stable'
+    component: main
+
+yarn_dependencies:
+  - yarn

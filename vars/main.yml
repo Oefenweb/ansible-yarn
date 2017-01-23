@@ -5,5 +5,8 @@ yarn_repositories:
     url: 'https://dl.yarnpkg.com/debian/ stable'
     component: main
 
+yarn_dependencies_pre:
+  - apt-transport-https
+
 yarn_dependencies:
   - yarn

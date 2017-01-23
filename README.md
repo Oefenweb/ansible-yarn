@@ -6,7 +6,7 @@ Set up (the latest version of) [Yarn](https://yarnpkg.com/) in Debian-like syste
 
 #### Requirements
 
-None
+* `apt-transport-https` (will be installed)
 
 #### Variables
 
@@ -15,6 +15,10 @@ None
 ## Dependencies
 
 None
+
+## Recommended
+
+* `ansible-nodejs` ([see](https://github.com/Oefenweb/ansible-nodejs))
 
 #### Example
 

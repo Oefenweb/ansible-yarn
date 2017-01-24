@@ -1,5 +1,5 @@
 # post test file for yarn
 ---
 - name: post | test installation
-  command: yarn ls
+  command: yarn --version
   changed_when: false

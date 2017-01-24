@@ -1,0 +1,11 @@
+# test file for yarn
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  pre_tasks:
+    - include: pre.yml
+  roles:
+    - ../../
+  post_tasks:
+    - include: post.yml

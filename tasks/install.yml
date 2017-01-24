@@ -1,0 +1,9 @@
+# tasks file for yarn
+---
+- name: install | dependencies
+  apt:
+    name: "{{ item }}"
+    state: "{{ apt_install_state | default('latest') }}"
+  with_items: "{{ yarn_dependencies }}"
+  tags:
+    - yarn-install-dependencies

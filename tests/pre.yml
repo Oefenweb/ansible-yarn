@@ -1,0 +1,28 @@
+# pre test file for serve-branch
+---
+- name: pre | install dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  when: >
+    ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('16.04', '<')
+    or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('9.0', '<')
+  with_items:
+    - curl
+
+- name: pre | setup nodejs
+  shell: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+  when: >
+    ansible_distribution == 'Ubuntu' and ansible_distribution_version | version_compare('16.04', '<')
+    or ansible_distribution == 'Debian' and ansible_distribution_version | version_compare('9.0', '<')
+
+- name: pre | install nodejs
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - nodejs

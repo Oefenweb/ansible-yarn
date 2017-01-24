@@ -1,0 +1,13 @@
+# tasks file for yarn
+---
+- include: repository.yml
+  tags:
+    - configuration
+    - yarn
+    - yarn-repository
+
+- include: install.yml
+  tags:
+    - configuration
+    - yarn
+    - yarn-install

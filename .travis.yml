@@ -20,17 +20,6 @@ env:
   - ANSIBLE_VERSION=2.0.0.1
   - ANSIBLE_VERSION=2.0.0.0
   - ANSIBLE_VERSION=1.9.6
-  - ANSIBLE_VERSION=1.9.5
-  - ANSIBLE_VERSION=1.9.4
-  - ANSIBLE_VERSION=1.9.3
-  - ANSIBLE_VERSION=1.9.2
-  - ANSIBLE_VERSION=1.9.1
-  - ANSIBLE_VERSION=1.9.0.1
-  - ANSIBLE_VERSION=1.8.4
-  - ANSIBLE_VERSION=1.8.3
-  - ANSIBLE_VERSION=1.8.2
-  - ANSIBLE_VERSION=1.8.1
-  - ANSIBLE_VERSION=1.8
 
 branches:
   only:
@@ -44,7 +33,7 @@ before_install:
 
 install:
   # Install Ansible.
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install --no-binary ansible ansible==$ANSIBLE_VERSION; fi
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
 
 script:

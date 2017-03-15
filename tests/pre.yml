@@ -1,9 +1,9 @@
-# pre test file for serve-branch
+# pre test file for yarn
 ---
 - name: pre | install dependencies
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
   when: >
@@ -23,6 +23,6 @@
 - name: pre | install nodejs
   apt:
     name: "{{ item }}"
-    state: latest
+    state: "{{ apt_install_state | default('latest') }}"
   with_items:
     - nodejs

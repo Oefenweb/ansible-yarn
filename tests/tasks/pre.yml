@@ -2,7 +2,7 @@
 ---
 - block:
 
-  - name: pre | install dependencies
+  - name: install dependencies
     apt:
       name:
         - curl
@@ -11,7 +11,7 @@
       update_cache: true
       cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-  - name: pre | setup nodejs
+  - name: setup nodejs
     shell: >
       curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     args:
@@ -19,10 +19,10 @@
       warn: false
 
   when: >
-    ansible_distribution == 'Ubuntu' and ansible_distribution_version is version('16.04', '<=')
-    or ansible_distribution == 'Debian' and ansible_distribution_version is version('9', '<')
+    ansible_distribution == 'Ubuntu' and ansible_distribution_major_version is version('16', '<=')
+    or ansible_distribution == 'Debian' and ansible_distribution_major_version is version('9', '<')
 
-- name: pre | install nodejs
+- name: install nodejs
   apt:
     name:
       - nodejs

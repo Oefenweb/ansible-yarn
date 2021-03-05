@@ -5,6 +5,8 @@
   - name: install dependencies
     apt:
       name:
+        - software-properties-common
+        - dirmngr
         - curl
         - sudo
       state: "{{ apt_install_state | default('latest') }}"

@@ -1,0 +1,27 @@
+# pre test file for yarn
+---
+- name: install dependencies
+  apt:
+    name:
+      - software-properties-common
+      - dirmngr
+      - curl
+      - sudo
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+
+- name: setup nodejs
+  shell: >
+    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+    warn: false
+  tags:
+    - skip_ansible_lint
+
+- name: install nodejs
+  apt:
+    name:
+      - nodejs
+    state: "{{ apt_install_state | default('latest') }}"

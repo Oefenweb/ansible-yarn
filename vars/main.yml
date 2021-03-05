@@ -6,7 +6,8 @@ yarn_repositories:
     component: main
 
 yarn_dependencies_pre:
-  - apt-transport-https
+  - software-properties-common
+  - dirmngr
 
 yarn_dependencies:
   - yarn

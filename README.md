@@ -7,7 +7,8 @@ Set up (the latest version of) [Yarn](https://yarnpkg.com/) in Debian-like syste
 
 #### Requirements
 
-* `apt-transport-https` (will be installed)
+* `software-properties-common` (will be installed)
+* `dirmngr` (will be installed)
 
 #### Variables
 

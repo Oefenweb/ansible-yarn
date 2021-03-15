@@ -1,4 +1,4 @@
-# post test file for yarn
+# post test file
 ---
 - name: test installation
   command: >

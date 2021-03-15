@@ -1,4 +1,4 @@
-# tasks file for yarn
+# tasks file
 ---
 - name: repository | install dependencies (pre)
   apt:

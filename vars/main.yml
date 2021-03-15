@@ -1,4 +1,4 @@
-# vars file for yarn
+# vars file
 ---
 yarn_repositories:
   - type: deb

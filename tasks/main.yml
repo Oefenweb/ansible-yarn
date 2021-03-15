@@ -1,4 +1,4 @@
-# tasks file for yarn
+# tasks file
 ---
 - include: repository.yml
   tags:

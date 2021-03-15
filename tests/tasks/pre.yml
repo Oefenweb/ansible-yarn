@@ -1,4 +1,4 @@
-# pre test file for yarn
+# pre test file
 ---
 - name: install dependencies
   apt:

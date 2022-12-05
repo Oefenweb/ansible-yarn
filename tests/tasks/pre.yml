@@ -11,12 +11,11 @@
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-- name: setup nodejs
+- name: setup nodejs  # noqa command-instead-of-module
   shell: >
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
   args:
     creates: /etc/apt/sources.list.d/nodesource.list
-    warn: false
   tags:
     - skip_ansible_lint
 

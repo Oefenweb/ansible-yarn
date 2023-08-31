@@ -1,7 +1,7 @@
 # pre test file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - software-properties-common
       - dirmngr
@@ -12,7 +12,7 @@
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
 - name: setup nodejs  # noqa command-instead-of-module
-  shell: >
+  ansible.builtin.shell: >
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
   args:
     creates: /etc/apt/sources.list.d/nodesource.list
@@ -20,7 +20,7 @@
     - skip_ansible_lint
 
 - name: install nodejs
-  apt:
+  ansible.builtin.apt:
     name:
       - nodejs
     state: "{{ apt_install_state | default('latest') }}"

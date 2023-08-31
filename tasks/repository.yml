@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: repository | install dependencies (pre)
-  apt:
+  ansible.builtin.apt:
     name: "{{ yarn_dependencies_pre }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -10,7 +10,7 @@
     - yarn-repository-install-dependencies
 
 - name: repository | add public key
-  apt_key:
+  ansible.builtin.apt_key:
     id: 1646B01B86E50310
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
     state: present
@@ -18,7 +18,7 @@
     - yarn-repository-public-key
 
 - name: repository | add
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ item.type }} {{ item.url }} {{ item.component }}"
     state: present
     update_cache: true

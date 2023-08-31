@@ -1,6 +1,6 @@
 # post test file
 ---
 - name: test installation
-  command: >
+  ansible.builtin.command: >
     yarn --version
   changed_when: false

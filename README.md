@@ -28,7 +28,7 @@ None
 ---
 - hosts: all
   roles:
-    - Oefenweb.yarn
+    - yarn
 ```
 
 #### License

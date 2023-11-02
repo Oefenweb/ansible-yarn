@@ -28,7 +28,7 @@ None
 ---
 - hosts: all
   roles:
-    - yarn
+    - oefenweb.yarn
 ```
 
 #### License

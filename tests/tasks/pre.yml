@@ -13,7 +13,7 @@
 
 - name: setup nodejs  # noqa command-instead-of-module
   ansible.builtin.shell: >
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
   args:
     creates: /etc/apt/sources.list.d/nodesource.list
   tags:

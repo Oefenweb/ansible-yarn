@@ -4,11 +4,11 @@ yarn_keyring_src: https://dl.yarnpkg.com/debian/pubkey.gpg
 yarn_keyring_dst: /usr/share/keyrings/yarn.gpg
 yarn_repositories:
   - type: "deb [signed-by={{ yarn_keyring_dst }}]"
-    url: 'https://dl.yarnpkg.com/debian/'
-    component: stable
+    url: 'https://dl.yarnpkg.com/debian/ stable'
+    component: main
   - type: deb
-    url: 'https://dl.yarnpkg.com/debian/'
-    component: stable
+    url: 'https://dl.yarnpkg.com/debian/ stable'
+    component: main
     state: absent
 
 yarn_dependencies_pre:

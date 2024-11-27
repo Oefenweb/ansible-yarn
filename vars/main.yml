@@ -16,7 +16,6 @@ yarn_dependencies_pre:
   - dirmngr
   - apt-transport-https
   - wget
-  - coreutils
 
 yarn_dependencies:
   - yarn

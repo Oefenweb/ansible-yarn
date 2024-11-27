@@ -21,7 +21,7 @@
 
 - name: repository | (keyring) file | download  # noqa command-instead-of-module risky-shell-pipe
   ansible.builtin.shell: >
-    wget -O- {{ yarn_keyring_src }} | gpg --dearmor | tee {{ yarn_keyring_dst }} > /dev/null
+    wget -O- {{ yarn_keyring_src }} | gpg --dearmor --yes --output {{ yarn_keyring_dst }}
   args:
     creates: "{{ yarn_keyring_dst }}"
   tags:

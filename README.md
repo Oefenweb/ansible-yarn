@@ -9,6 +9,8 @@ Set up (the latest version of) [Yarn](https://yarnpkg.com/) in Debian-like syste
 
 * `software-properties-common` (will be installed)
 * `dirmngr` (will be installed)
+* `apt-transport-https` (will be installed)
+* `wget` (will be installed)
 
 #### Variables
 

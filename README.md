@@ -1,6 +1,6 @@
 ## yarn
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-yarn.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-yarn)
+[![CI](https://github.com/Oefenweb/ansible-yarn/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-yarn/actions?query=workflow%3ACI)
 [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-yarn-blue.svg)](https://galaxy.ansible.com/Oefenweb/yarn/)
 
 Set up (the latest version of) [Yarn](https://yarnpkg.com/) in Debian-like systems.
